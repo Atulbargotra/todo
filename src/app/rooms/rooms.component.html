@@ -1,1 +1,10 @@
 <h1>Welcome to {{hotelName}}</h1>
+<div *ngIf="selectedRoom">
+  <p>{{selectedRoom | json}}</p>
+</div>
+<app-room-list [rooms]="rooms" (selectedRoom)="onRoomSelected($event)"></app-room-list>
+
+<p-toast></p-toast>
+
+
+<p-button icon="pi pi-plus" styleClass="p-button-rounded p-button-text p-button-raised" (onClick)="addRoom()"></p-button>
